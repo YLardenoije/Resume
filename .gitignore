@@ -299,3 +299,7 @@ pip-selfcheck.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,virtualenv,venv,django,visualstudiocode
+main/static/img/Paspoort 1.jpeg
+main/static/img/paspoort 2.jpeg
+main/static/img/paspoort 3.jpeg
+Portfolio/SECRETKEY.py
