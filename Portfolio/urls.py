@@ -18,18 +18,20 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+ #TODO: https://docs.djangoproject.com/en/4.2/howto/static-files/
 admin.autodiscover()
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("cms.urls")),
-]
+
+
 from pathlib import Path
 import os
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-#TODO: put above in settings
 
-#urlpatterns += path(MEDIA_URL, document_root=MEDIA_ROOT) #TODO: https://docs.djangoproject.com/en/4.2/howto/static-files/
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("cms.urls")),
+]
+
+urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
