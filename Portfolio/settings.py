@@ -90,6 +90,7 @@ CMS_TEMPLATES = [
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 MIDDLEWARE = [
+        'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.locale.LocaleMiddleware",  # not installed by default
 "cms.middleware.user.CurrentUserMiddleware",
 "cms.middleware.page.CurrentPageMiddleware",
