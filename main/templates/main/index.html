@@ -1,5 +1,39 @@
-<html> 
-    <body>
-        <p>HI</p>
-    </body>
-</html>
+{% extends 'main/base.html' %}
+
+<!-- 
+    Main Portfolio Page
+    
+    This is the main template that assembles all sections of the portfolio website.
+    It extends the base template and includes all major sections:
+    
+    1. Hero/Header - Landing area with name, photo, and introduction
+    2. About - Personal information, skills, work history, and education
+    3. Portfolio - Work samples and projects (currently WIP)
+    4. Blogs - Blog posts and articles (currently placeholder content)
+    5. Contact - Contact information and social media links
+    
+    The page uses a single-page application approach with smooth scrolling
+    navigation between sections.
+-->
+
+{% block title %}Portfolio - Yves Lardenoije - Software Engineer{% endblock %}
+
+{% block content %}
+    <!-- Hero Section: First impression with photo and introduction -->
+    {% include 'main/sections/hero.html' %}
+    
+    <!-- Main content wrapper -->
+    <main>
+        <!-- About Section: Personal info, skills, and experience -->
+        {% include 'main/sections/about.html' %}
+        
+        <!-- Portfolio Section: Work samples and projects -->
+        {% include 'main/sections/portfolio.html' %}
+        
+        <!-- Blogs Section: Articles and blog posts -->
+        {% include 'main/sections/blogs.html' %}
+        
+        <!-- Contact Section: Contact information and social links -->
+        {% include 'main/sections/contact.html' %}
+    </main>
+{% endblock %}

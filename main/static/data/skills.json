@@ -1,0 +1,46 @@
+{
+  "skills": [
+    {
+      "name": "C++",
+      "percentage": 85,
+      "colorClass": "html",
+      "category": "Programming Languages"
+    },
+    {
+      "name": "C",
+      "percentage": 80,
+      "colorClass": "css",
+      "category": "Programming Languages"
+    },
+    {
+      "name": "Python",
+      "percentage": 75,
+      "colorClass": "react",
+      "category": "Programming Languages"
+    },
+    {
+      "name": "JavaScript",
+      "percentage": 70,
+      "colorClass": "js",
+      "category": "Programming Languages"
+    },
+    {
+      "name": "Agile",
+      "percentage": 75,
+      "colorClass": "node",
+      "category": "Methodologies"
+    },
+    {
+      "name": "Git",
+      "percentage": 80,
+      "colorClass": "html",
+      "category": "Tools"
+    },
+    {
+      "name": "Django",
+      "percentage": 65,
+      "colorClass": "css",
+      "category": "Frameworks"
+    }
+  ]
+}

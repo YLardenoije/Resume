@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags for proper rendering and mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title - can be overridden in child templates -->
+    <title>{% block title %}Portfolio - Yves Lardenoije{% endblock %}</title>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    
+    <!-- Google Fonts preconnection for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Awesome icons for UI elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Poppins font family for consistent typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Additional head content can be added by child templates -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="main-content">
+    <!-- Main content area - to be filled by child templates -->
+    {% block content %}{% endblock %}
+
+    <!-- Navigation controls - Fixed position navigation for single-page app behavior -->
+    {% include 'main/partials/navigation.html' %}
+    
+    <!-- Theme toggle button - Allows users to switch between themes -->
+    {% include 'main/partials/theme_toggle.html' %}
+    
+    <!-- JavaScript files -->
+    <script src="{% static 'app.js' %}"></script>
+    
+    <!-- Additional scripts can be added by child templates -->
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
