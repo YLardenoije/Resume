@@ -21,7 +21,7 @@ from pathlib import Path
 SKILLS_FILE = Path(__file__).parent / "main" / "static" / "data" / "skills.json"
 
 # Available color classes for styling
-COLOR_CLASSES = ["html", "css", "js", "react", "node"]
+COLOR_CLASSES = ["color-primary", "color-red", "color-orange", "color-purple", "color-teal"]
 
 def load_skills():
     """Load skills from JSON file"""

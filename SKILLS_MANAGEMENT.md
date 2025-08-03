@@ -35,19 +35,19 @@ To update your skills, edit the `main/static/data/skills.json` file:
     {
       "name": "C++",
       "percentage": 85,
-      "colorClass": "html",
+      "colorClass": "color-primary",
       "category": "Programming Languages"
     },
     {
       "name": "JavaScript",
       "percentage": 70,
-      "colorClass": "css",
+      "colorClass": "color-orange",
       "category": "Programming Languages"
     },
     {
       "name": "Docker",
       "percentage": 65,
-      "colorClass": "js",
+      "colorClass": "color-teal",
       "category": "Tools"
     }
   ]
@@ -62,13 +62,13 @@ To update your skills, edit the `main/static/data/skills.json` file:
 - **colorClass**: CSS class for progress bar color (string)
 
 ### Available Color Classes:
-- `html` - First color scheme
-- `css` - Second color scheme  
-- `js` - Third color scheme
-- `react` - Fourth color scheme
-- `node` - Fifth color scheme
+- `color-primary` - Uses the site's primary color (green)
+- `color-red` - Red progress bar
+- `color-orange` - Orange progress bar  
+- `color-purple` - Purple progress bar
+- `color-teal` - Teal progress bar
 
-*Note: The color class names are inherited from the original CSS and don't need to match the skill names.*
+*Note: The width of each progress bar is automatically set to match the percentage value from the JSON data.*
 
 ## Benefits of This Approach
 

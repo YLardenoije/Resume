@@ -309,25 +309,24 @@ section {
   height: 100%;
   background-color: var(--color-secondary);
   transition: all 0.4s ease-in-out;
-  width: 60%;
+  width: 0%; /* Default width, will be overridden by JavaScript inline style */
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .html {
-  width: 85%;
+
+/* Color classes for different skill types - width is now set dynamically by JavaScript */
+.about-stats .progress-bars .progress-bar .progress-con .progress .color-primary {
+  background-color: var(--color-secondary);
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .css {
-  width: 80%;
+.about-stats .progress-bars .progress-bar .progress-con .progress .color-red {
+  background-color: #e74c3c;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .js {
-  width: 80%;
+.about-stats .progress-bars .progress-bar .progress-con .progress .color-orange {
+  background-color: #f39c12;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 75%;
+.about-stats .progress-bars .progress-bar .progress-con .progress .color-purple {
+  background-color: #9b59b6;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .node {
-  width: 80%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 70%;
+.about-stats .progress-bars .progress-bar .progress-con .progress .color-teal {
+  background-color: #1abc9c;
 }
 
 .stat-title {

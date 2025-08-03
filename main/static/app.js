@@ -20,7 +20,7 @@
                 <div class="progress-con">
                     <p class="prog-text">${percentage}%</p>
                     <div class="progress">
-                        <span class="${colorClass}"></span>
+                        <span class="${colorClass}" style="width: ${percentage}%;"></span>
                     </div>
                 </div>
             </div>
@@ -43,11 +43,11 @@
             
             // Fallback skills data if JSON loading fails
             return [
-                { name: 'C++', percentage: 85, colorClass: 'html', category: 'Programming Languages' },
-                { name: 'C', percentage: 80, colorClass: 'css', category: 'Programming Languages' },
-                { name: 'Agile', percentage: 75, colorClass: 'js', category: 'Methodologies' },
-                { name: 'Python', percentage: 75, colorClass: 'react', category: 'Programming Languages' },
-                { name: 'Git', percentage: 80, colorClass: 'node', category: 'Tools' }
+                { name: 'C++', percentage: 85, colorClass: 'color-primary', category: 'Programming Languages' },
+                { name: 'C', percentage: 80, colorClass: 'color-red', category: 'Programming Languages' },
+                { name: 'Agile', percentage: 75, colorClass: 'color-orange', category: 'Methodologies' },
+                { name: 'Python', percentage: 75, colorClass: 'color-purple', category: 'Programming Languages' },
+                { name: 'Git', percentage: 80, colorClass: 'color-teal', category: 'Tools' }
             ];
         }
     }
