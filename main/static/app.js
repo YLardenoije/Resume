@@ -1,16 +1,53 @@
 (function () {
-    // Navigation and theme functionality
+    // Navigation and smooth scrolling functionality
     [...document.querySelectorAll(".control")].forEach(button => {
         button.addEventListener("click", function() {
+            // Update active navigation button
             document.querySelector(".active-btn").classList.remove("active-btn");
             this.classList.add("active-btn");
-            document.querySelector(".active").classList.remove("active");
-            document.getElementById(button.dataset.id).classList.add("active");
+            
+            // Smooth scroll to the target section
+            const targetSection = document.getElementById(button.dataset.id);
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         })
     });
     document.querySelector(".theme-btn").addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
     })
+
+    // Intersection Observer for automatic navigation highlighting during scroll
+    function updateActiveNavOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        const navButtons = document.querySelectorAll('.control');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all nav buttons
+                    navButtons.forEach(btn => btn.classList.remove('active-btn'));
+                    
+                    // Add active class to the corresponding nav button
+                    const activeButton = document.querySelector(`.control[data-id="${entry.target.id}"]`);
+                    if (activeButton) {
+                        activeButton.classList.add('active-btn');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3, // Trigger when 30% of the section is visible
+            rootMargin: '-10% 0px -60% 0px' // Adjust trigger area
+        });
+
+        sections.forEach(section => observer.observe(section));
+    }
+
+    // Initialize scroll-based navigation highlighting
+    document.addEventListener('DOMContentLoaded', updateActiveNavOnScroll);
 
     // Skills progress bars generation
     function createProgressBar(skillName, percentage, colorClass) {

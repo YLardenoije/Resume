@@ -59,7 +59,6 @@ To update your skills, edit the `main/static/data/skills.json` file:
 - **percentage**: Proficiency level 0-100 (number) - *Required*
 - **colorClass**: CSS class for progress bar color (string) - *Required*
 - **category**: Skill category for organization (string) - *Optional*
-- **colorClass**: CSS class for progress bar color (string)
 
 ### Available Color Classes:
 - `color-primary` - Uses the site's primary color (green)
@@ -89,7 +88,7 @@ To add "Docker" with 60% proficiency, add this to your `skills.json`:
 {
   "name": "Docker",
   "percentage": 60,
-  "colorClass": "html",
+  "colorClass": "color-primary",
   "category": "DevOps Tools"
 }
 ```

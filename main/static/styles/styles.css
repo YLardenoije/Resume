@@ -5,6 +5,11 @@
   list-style: none;
 }
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-primary: #191d2b;
   --color-secondary: #27AE60;
@@ -63,22 +68,21 @@ header {
 section {
   min-height: 100vh;
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   padding: 3rem 18rem;
 }
 
 .container {
-  display: none;
-  transform: translateY(-100%) scale(0);
+  display: block; /* Always visible for one-page scrolling */
+  transform: translateY(0) scaleY(1); /* Remove hidden transforms */
   transition: all 0.4s ease-in-out;
   background-color: var(--color-primary);
 }
 
 .active {
+  /* Keep for potential navigation highlighting, but no longer controls visibility */
   display: block;
-  animation: appear 1s ease-in-out;
+  animation: none; /* Remove appear animation */
   transform: translateY(0) scaleY(1);
 }
 @keyframes appear {

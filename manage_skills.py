@@ -118,12 +118,14 @@ def update_skill(name, percentage):
     """Update a skill's percentage"""
     data = load_skills()
     skills = data.get("skills", [])
-    
     for skill in skills:
         if skill['name'].lower() == name.lower():
             old_percentage = skill['percentage']
-            skill['percentage'] = int(percentage)
-            
+            try:
+                percentage = int(percentage)
+            except ValueError:
+                print(f"❌ Invalid percentage value: {percentage}. Must be an integer.")
+                return            
             if save_skills(data):
                 print(f"✅ Updated {name}: {old_percentage}% → {percentage}%")
             return
