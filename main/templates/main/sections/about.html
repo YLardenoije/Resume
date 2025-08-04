@@ -1,0 +1,37 @@
+<!-- 
+    About Section Component
+    
+    This section provides detailed information about the person including:
+    - Personal description
+    - Skills with progress bars
+    - Work history timeline
+    - Education history timeline
+    
+    Structure: Single column layout with multiple subsections
+-->
+<section class="container about" id="about">
+    <!-- Section title with background text effect -->
+    <div class="main-title">
+        <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
+    </div>
+    
+    <!-- About container with personal information -->
+    <div class="about-container">
+        <!-- Personal description -->
+        <h4>Information About me</h4>
+        <p>
+            I am an aspiring software engineer that loves being excited about a project, and will get excited about many projects.
+            I love the challenge of trying to figure out the puzzle before me and try my best to complete it in the best way possible.
+            The result always makes me happy. I especially love it when I get the solution as simple as possible to explain and maintain.
+        </p>
+    </div>
+    
+    <!-- Skills section with progress bars -->
+    {% include 'main/partials/skills.html' %}
+    
+    <!-- Work history timeline -->
+    {% include 'main/partials/work_history.html' %}
+    
+    <!-- Education history timeline -->
+    {% include 'main/partials/education_history.html' %}
+</section>

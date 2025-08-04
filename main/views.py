@@ -4,4 +4,5 @@ from django.http import HttpResponse, request
 # Create your views here.
 
 def index(response):
-    return render(response, 'main/JS_CSS_PortfolioProject-master/index.html',{})
+    # Updated to use the new modular template structure
+    return render(response, 'main/index.html',{})

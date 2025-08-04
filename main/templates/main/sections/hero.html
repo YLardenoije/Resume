@@ -1,0 +1,52 @@
+{% load static %}
+<!-- 
+    Hero/Header Section Component
+    
+    This is the main landing section that visitors see first. It includes:
+    - Personal photo and decorative shape
+    - Name and professional title
+    - Brief personal introduction
+    - Call-to-action button for CV download
+    
+    Layout: Two-column design with image on left, content on right
+-->
+<header class="container header" id="home">
+    <div class="header-content">
+        <!-- Left side: Profile image with decorative elements -->
+        <div class="left-header">
+            <!-- Decorative background shape for visual interest -->
+            <div class="h-shape"></div>
+            
+            <!-- Profile image container -->
+            <div class="image">
+                <img src="{% static 'img/ik.jpeg'%}" alt="Profile picture of Yves Lardenoije">
+            </div>
+        </div>
+        
+        <!-- Right side: Introduction text and CTA -->
+        <div class="right-header">
+            <!-- Main headline with name highlighting -->
+            <h1 class="name">
+                Hi, I'm <span>Yves Lardenoije</span>
+                an enthusiastic software engineer
+            </h1>
+            
+            <!-- Personal introduction paragraph -->
+            <p>
+                I am a software developer that loves a good challenge. 
+                This can be a challenge in implementation due to hard to reach requirements. 
+                However i also love a good domain challenge.
+                I get energy from learning new things. 
+                If I could i would love to know everything about everything.
+            </p>
+            
+            <!-- Call-to-action button for CV download -->
+            <div class="btn-con">
+                <a href="{% static 'resume_Yves_Lardenoije.pdf' %}" class="main-btn" download>
+                    <span class="btn-text">Download CV (might be outdated)</span>
+                    <span class="btn-icon"><i class="fas fa-download"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
