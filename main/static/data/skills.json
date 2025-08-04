@@ -7,28 +7,10 @@
       "category": "Programming Languages"
     },
     {
-      "name": "C",
-      "percentage": 80,
-      "colorClass": "color-red",
-      "category": "Programming Languages"
-    },
-    {
       "name": "Python",
       "percentage": 75,
       "colorClass": "color-purple",
       "category": "Programming Languages"
-    },
-    {
-      "name": "JavaScript",
-      "percentage": 70,
-      "colorClass": "color-orange",
-      "category": "Programming Languages"
-    },
-    {
-      "name": "Agile",
-      "percentage": 75,
-      "colorClass": "color-teal",
-      "category": "Methodologies"
     },
     {
       "name": "Git",
@@ -37,16 +19,22 @@
       "category": "Tools"
     },
     {
-      "name": "Django",
-      "percentage": 65,
-      "colorClass": "color-red",
-      "category": "Frameworks"
+      "name": "Scrum master",
+      "percentage": 80,
+      "colorClass": "color-orange",
+      "category": "General"
     },
     {
-      "name": "React",
-      "percentage": 78,
-      "colorClass": "html",
-      "category": "Frontend Frameworks"
+      "name": "Django",
+      "percentage": 60,
+      "colorClass": "color-red",
+      "category": "General"
+    },
+    {
+      "name": "C",
+      "percentage": 70,
+      "colorClass": "color-red",
+      "category": "General"
     }
   ]
 }
