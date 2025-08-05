@@ -125,7 +125,14 @@ echo "   Password: $DB_PASSWORD"
 # Run Django setup
 echo "🔧 Setting up Django application..."
 source venv/bin/activate
-export $(cat .env | grep -v '^#' | xargs)
+
+# Securely load environment variables from .env
+while IFS='=' read -r key value; do
+    # Skip comments and empty lines
+    if [[ -n "$key" && "$key" != \#* ]]; then
+        export "$key=$value"
+    fi
+done < .env
 
 python manage.py migrate
 python manage.py collectstatic --noinput
