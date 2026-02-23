@@ -28,6 +28,15 @@
     <!-- Additional head content can be added by child templates -->
     {% block extra_head %}{% endblock %}
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCMX942886"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GCMX942886');
+</script>
 <body class="main-content">
     <!-- Main content area - to be filled by child templates -->
     {% block content %}{% endblock %}
