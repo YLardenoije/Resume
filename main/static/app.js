@@ -22,25 +22,35 @@
 
     // Intersection Observer for automatic navigation highlighting during scroll
     function updateActiveNavOnScroll() {
-        const sections = document.querySelectorAll('section[id]');
+        const sections = document.querySelectorAll('section[id], header[id]');
         const navButtons = document.querySelectorAll('.control');
         
         const observer = new IntersectionObserver((entries) => {
+            // Find the section with the highest intersection ratio
+            let mostVisible = null;
+            let highestRatio = 0;
+            
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Remove active class from all nav buttons
-                    navButtons.forEach(btn => btn.classList.remove('active-btn'));
-                    
-                    // Add active class to the corresponding nav button
-                    const activeButton = document.querySelector(`.control[data-id="${entry.target.id}"]`);
-                    if (activeButton) {
-                        activeButton.classList.add('active-btn');
-                    }
+                if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+                    highestRatio = entry.intersectionRatio;
+                    mostVisible = entry.target;
                 }
             });
+            
+            // If we found a visible section, update navigation
+            if (mostVisible) {
+                // Remove active class from all nav buttons
+                navButtons.forEach(btn => btn.classList.remove('active-btn'));
+                
+                // Add active class to the corresponding nav button
+                const activeButton = document.querySelector(`.control[data-id="${mostVisible.id}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active-btn');
+                }
+            }
         }, {
-            threshold: 0.3, // Trigger when 30% of the section is visible
-            rootMargin: '-10% 0px -60% 0px' // Adjust trigger area
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], // Multiple thresholds for better detection
+            rootMargin: '0px' // No margin adjustments for simpler behavior
         });
 
         sections.forEach(section => observer.observe(section));
